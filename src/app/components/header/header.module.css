@@ -1,0 +1,13 @@
+.nav {
+  @apply flex flex-wrap items-center justify-center pl-6 ml-6 text-base border-l border-gray-200 md:mr-auto;
+  @apply gap-4
+}
+
+.navlink {
+  color: #1357D2;
+  font-family: Arial;
+  font-size: 16.8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
