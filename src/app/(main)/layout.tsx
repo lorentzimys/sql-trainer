@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { Theme } from '@radix-ui/themes';
 import { Header2 } from '../components/header/header2'
 import { Footer } from '../components/footer/footer'
+import { GoogleAnalytics } from '../components/google-analytics';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Footer />
         </Theme>
       </body>
+      <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? ''} />
     </html>
   )
 }
