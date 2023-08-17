@@ -4,7 +4,7 @@ import * as Select from '@radix-ui/react-select';
 
 export const LanguageSelector = () => {
   return (
-    <Select.Root variant="soft">
+    <Select.Root>
       <Select.Trigger className="flex w-16" placeholder="Select language" />
       <Select.Content >
         <Select.Group>
