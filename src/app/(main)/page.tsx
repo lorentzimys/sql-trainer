@@ -25,7 +25,11 @@ const abVariants: any = {
 export default function Home() {
   const cookieStore = cookies();
   const abTestCookie = cookieStore.get(COOKIE_NAME);
+
+  console.log('abTestCookie', abTestCookie);
+
   const cookieValue = abTestCookie?.value ?? null;
+
   const experimentVariantIndex = cookieValue?.split('$')[1] ?? "0";
   const experimentVariant = abVariants[experimentVariantIndex];
   const { color, title } = experimentVariant;
