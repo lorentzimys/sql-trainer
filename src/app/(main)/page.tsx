@@ -1,9 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
 import { AspectRatio, Box, Flex, Heading, Link, Section, } from"@radix-ui/themes";
 import Image from 'next/image'
+import { cookies } from 'next/headers'
+
+import { COOKIE_NAME } from "@app/utils/cookie";
+
 import styles from './page.module.css'
 
+const abVariants: any = {
+  "0": {
+    title: 'разработчиков',
+    color: '#b91c1c',
+  },
+  "1": {
+    title: 'аналитиков',
+    color: '#1d4ed8',
+  },
+  "2": {
+    title: 'всех',
+    color: '#4d7c0f',
+  }
+}
+
 export default function Home() {
+  const cookieStore = cookies();
+  const abTestCookie = cookieStore.get(COOKIE_NAME);
+  const cookieValue = abTestCookie?.value ?? null;
+  const experimentVariantIndex = cookieValue?.split('$')[1] ?? "0";
+  const experimentVariant = abVariants[experimentVariantIndex];
+  const { color, title } = experimentVariant;
+
   return (
     <main>
       <Flex width="100%" direction="column">
@@ -11,7 +37,8 @@ export default function Home() {
             <Box className="container flex flex-col mx-auto px-8 justify-center gap-16 md:flex-row">
               <div className="flex flex-col w-[40%] gap-4">
                 <span className="text-5xl">Учим <br/>понимать SQL</span>
-                <span className="text-4xl text-red-700 font-mono">разработчиков</span>
+
+                <span style={{ color }} className={`text-4xl font-mono`}>{title}</span>
               </div>
               <div className="flex flex-1 flex-col gap-4">
                 <Link href="/guide">

@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script async src={`https://www.googleoptimize.com/optimize.js?id=${GCONTAINER_ID}`} />
+        <Script src={`https://www.googleoptimize.com/optimize.js?id=${GCONTAINER_ID}`} />
       </head>
       <body className={inter.className}>
         <Theme accentColor="crimson" grayColor="sand" radius="large" scaling="95%">

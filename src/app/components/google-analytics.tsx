@@ -7,8 +7,7 @@ interface GoogleAnalyticsProps {
 
 export const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ id }) => (
   <>
-    
-    <Script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} />
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} />
       <Script id={id} dangerouslySetInnerHTML={{
           __html: `
         window.dataLayer = window.dataLayer || [];
