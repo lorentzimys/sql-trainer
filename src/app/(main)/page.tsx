@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { AspectRatio, Box, Flex, Heading, Link, Section, } from"@radix-ui/themes";
 import Image from 'next/image'
-import { cookies } from 'next/headers'
-
 import { COOKIE_NAME } from "@app/utils/cookie";
+import Cookies from 'js-cookie'
 
 import styles from './page.module.css'
 
@@ -23,13 +22,11 @@ const abVariants: any = {
 }
 
 export default function Home() {
-  const cookieStore = cookies();
-  const abTestCookie = cookieStore.get(COOKIE_NAME);
+  const abTestCookie = Cookies.get(COOKIE_NAME);
 
   console.log('abTestCookie', abTestCookie);
 
-  const cookieValue = abTestCookie?.value ?? null;
-
+  const cookieValue = abTestCookie ?? null;
   const experimentVariantIndex = cookieValue?.split('$')[1] ?? "0";
   const experimentVariant = abVariants[experimentVariantIndex];
   const { color, title } = experimentVariant;
