@@ -1,3 +1,41 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint", "prettier", "import"], // Add "import" plugin
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    // ...
+     // turn on errors for missing imports
+     "import/no-unresolved": "warn",
+     "sort-imports": ["warn", {
+       "ignoreCase": false,
+       "ignoreDeclarationSort": true,
+       "ignoreMemberSort": false,
+       "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+       "allowSeparatedGroups": false
+     }],
+     // "import/no-named-as-default-member": "off",
+     "import/order": [
+       "warn",
+       {
+         "groups": [
+           "builtin", // Built-in imports (come from NodeJS native) go first
+           "external", // <- External imports
+           "internal" // <- Absolute imports
+         ],
+         "newlines-between": "always",
+         "alphabetize": {
+           /* sort in ascending order. Options: ["ignore", "asc", "desc"] */
+           "order": "asc",
+           /* ignore case. Options: [true, false] */
+           "caseInsensitive": true
+         }
+       }
+     ]
+  }
 }

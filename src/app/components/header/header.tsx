@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import { Avatar } from "@radix-ui/themes";
+import Image from "next/image";
 import React from "react";
 
 export const Header = () => {
@@ -11,7 +10,7 @@ export const Header = () => {
         width="134"
         height="36"
       />
-      <nav className='flex align-middle'>
+      <nav className="flex align-middle">
         <ul className="flex flex-row gap-2">
           <li>Главная</li>
           <li>Бронирование</li>
@@ -21,5 +20,5 @@ export const Header = () => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};

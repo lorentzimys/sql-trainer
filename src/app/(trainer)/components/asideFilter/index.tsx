@@ -1,10 +1,12 @@
-import { Checkbox, Flex, Heading, Separator, Text } from "@radix-ui/themes"
+import { Checkbox, Flex, Heading, Separator, Text } from "@radix-ui/themes";
 
 export const AsideFilter = () => {
   return (
     <Flex direction="column" gap="4">
       <Flex direction="column" gap="2">
-        <Heading as="h3" size="5">Статус</Heading>
+        <Heading as="h3" size="5">
+          Статус
+        </Heading>
         <Flex gap="1" direction="column">
           <Flex>
             <Text size="2">
@@ -22,9 +24,11 @@ export const AsideFilter = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Separator orientation="horizontal" size="4"/>
+      <Separator orientation="horizontal" size="4" />
       <Flex direction="column" gap="2">
-        <Heading as="h3" size="5">Сложность</Heading>
+        <Heading as="h3" size="5">
+          Сложность
+        </Heading>
         <Flex gap="1" direction="column">
           <Flex>
             <Text size="2">
@@ -49,9 +53,11 @@ export const AsideFilter = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Separator orientation="horizontal" size="4"/>
+      <Separator orientation="horizontal" size="4" />
       <Flex direction="column" gap="2">
-        <Heading as="h3" size="5">Тип</Heading>
+        <Heading as="h3" size="5">
+          Тип
+        </Heading>
         <Flex gap="1" direction="column">
           <Flex>
             <Text size="2">
@@ -70,5 +76,5 @@ export const AsideFilter = () => {
         </Flex>
       </Flex>
     </Flex>
-  )
-}
+  );
+};
